@@ -23,7 +23,7 @@ public class Paddle : MonoBehaviour
     {
         FollowCursor();
         // Shot the ball when left click (0) is press
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !ball.isActive)
         {
             ShotBall();
         }
