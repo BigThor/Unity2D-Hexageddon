@@ -28,6 +28,16 @@ public class Paddle : MonoBehaviour
         }
     }
 
+    private void ShotBall()
+    {
+        ball.Activate();
+    }
+
+    private void FixedUpdate()
+    {
+        FollowCursor();
+    }
+
     private void FollowCursor()
     {
         float newXPosition = Input.mousePosition.x / Screen.width * screenWidthInUnits;
@@ -37,15 +47,5 @@ public class Paddle : MonoBehaviour
 
         Vector2 newPaddlePosition = new Vector2(newXPosition, transform.position.y);
         transform.position = Vector2.MoveTowards(transform.position, newPaddlePosition, maxSpeed);
-    }
-
-    private void ShotBall()
-    {
-        ball.Activate();
-    }
-
-    private void FixedUpdate()
-    {
-        FollowCursor();
     }
 }
