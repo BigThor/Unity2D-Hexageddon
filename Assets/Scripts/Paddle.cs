@@ -37,11 +37,6 @@ public class Paddle : MonoBehaviour
 
         Vector2 newPaddlePosition = new Vector2(newXPosition, transform.position.y);
         transform.position = Vector2.MoveTowards(transform.position, newPaddlePosition, maxSpeed);
-
-        //if (rigidBody.velocity.magnitude > maxSpeed)
-        //{
-        //    rigidBody.velocity = rigidBody.velocity.normalized * maxSpeed;
-        //}
     }
 
     private void ShotBall()
