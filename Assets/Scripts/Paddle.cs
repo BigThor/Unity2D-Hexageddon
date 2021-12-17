@@ -21,7 +21,6 @@ public class Paddle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        FollowCursor();
         // Shot the ball when left click (0) is press
         if (Input.GetMouseButtonDown(0) && !ball.isActive)
         {
@@ -37,8 +36,12 @@ public class Paddle : MonoBehaviour
         newXPosition = Mathf.Clamp(newXPosition, limit, screenWidthInUnits - limit);
 
         Vector2 newPaddlePosition = new Vector2(newXPosition, transform.position.y);
-        float time = (newXPosition - transform.position.x) / maxSpeed;
         transform.position = Vector2.MoveTowards(transform.position, newPaddlePosition, maxSpeed);
+
+        //if (rigidBody.velocity.magnitude > maxSpeed)
+        //{
+        //    rigidBody.velocity = rigidBody.velocity.normalized * maxSpeed;
+        //}
     }
 
     private void ShotBall()
@@ -48,9 +51,6 @@ public class Paddle : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (rigidBody.velocity.magnitude > maxSpeed)
-        {
-            rigidBody.velocity = rigidBody.velocity.normalized * maxSpeed;
-        }
+        FollowCursor();
     }
 }
