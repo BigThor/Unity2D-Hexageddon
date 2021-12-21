@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 5305749566875415951}
   destroySound: {fileID: 8300000, guid: a77b4c02283ce6346aec3ee99886db8b, type: 3}
+  hitParticlesPrefab: {fileID: 5902962885043104433, guid: b8a55a25a3b38924686deee5636ba89d, type: 3}
   startingColor: 1
   currentHexagonHP: 0
 --- !u!60 &3087702495447322787

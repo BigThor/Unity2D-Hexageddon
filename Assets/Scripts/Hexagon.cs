@@ -7,6 +7,7 @@ public class Hexagon : SceneLoadedActor
 {
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] AudioClip destroySound;
+    [SerializeField] ParticleSystem hitParticlesPrefab;
 
     [SerializeField] HexagonColor startingColor;
 
@@ -39,6 +40,7 @@ public class Hexagon : SceneLoadedActor
     {
         if(collision.collider.gameObject.name == "Ball")
         {
+            SpawnHitParticles();
             if (--currentHexagonHP > 0)
             {
                 UpdateColor((HexagonColor)currentHexagonHP);
@@ -50,9 +52,18 @@ public class Hexagon : SceneLoadedActor
         }
     }
 
+    private void SpawnHitParticles()
+    {
+        ParticleSystem newParticles = (ParticleSystem)UnityEditor.PrefabUtility.InstantiatePrefab(hitParticlesPrefab);
+        newParticles.transform.position = transform.position; 
+
+        ParticleSystem.MainModule settings = newParticles.main;
+        settings.startColor = spriteRenderer.color;
+        newParticles.Play();
+    }
+
     private void UpdateColor(HexagonColor newHexagonColor)
     {
-        //spriteRenderer.color
         Color updatedColor = Color.green;
         switch(newHexagonColor)
         {

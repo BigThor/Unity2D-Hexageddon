@@ -12,7 +12,7 @@ public class SceneLoader : MonoBehaviour {
     public static SceneLoader Instance { 
         get
         {
-            if (_instance == null)
+            if (_instance == null && SceneManager.GetActiveScene() != null)
             {
                 GameObject obj = new GameObject();
                 _instance = obj.AddComponent<SceneLoader>();
@@ -68,5 +68,13 @@ public class SceneLoader : MonoBehaviour {
 
         return !( currentScene.Equals(mainMenuKey) || 
                   currentScene.Equals(gameOverKey) );
+    }
+
+    private void OnDestroy()
+    {
+        if(_instance != null)
+        {
+            Destroy(_instance.gameObject);
+        }
     }
 }
