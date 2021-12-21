@@ -121,6 +121,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 5305749566875415951}
   destroySound: {fileID: 8300000, guid: a77b4c02283ce6346aec3ee99886db8b, type: 3}
   startingColor: 1
+  currentHexagonHP: 0
 --- !u!60 &3087702495447322787
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -5,11 +5,36 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour {
 
-    // called first
-    void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
+    private string mainMenuKey = "Start Menu";
+    private string gameOverKey = "Game Over";
+
+    private static SceneLoader _instance;
+    public static SceneLoader Instance { 
+        get
+        {
+            if (_instance == null)
+            {
+                GameObject obj = new GameObject();
+                _instance = obj.AddComponent<SceneLoader>();
+            }
+            return _instance;
+        } 
     }
+
+    private void Awake()
+    {
+
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
 
     public void LoadNextScene()
     {
@@ -17,22 +42,19 @@ public class SceneLoader : MonoBehaviour {
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (SceneManager.GetActiveScene().name != "Start Menu" &&
-            SceneManager.GetActiveScene().name != "Game Over")
-        {
-            Cursor.visible = false;
-        }
-        else
-        {
-            Cursor.visible = true;
-        }
-    }
-
     public void LoadStartScene()
     {
-        SceneManager.LoadScene("Start Menu");
+        SceneManager.LoadScene(mainMenuKey);
+    }
+
+    public void LoadGameOverScene()
+    {
+        SceneManager.LoadScene(gameOverKey);
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void QuitGame()
@@ -40,9 +62,11 @@ public class SceneLoader : MonoBehaviour {
         Application.Quit();
     }
 
-    // called when the game is terminated
-    void OnDisable()
+    public bool IsCurrentSceneALevel()
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        return !( currentScene.Equals(mainMenuKey) || 
+                  currentScene.Equals(gameOverKey) );
     }
 }

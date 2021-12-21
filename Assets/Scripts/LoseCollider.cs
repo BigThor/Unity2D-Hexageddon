@@ -8,7 +8,22 @@ public class LoseCollider : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneManager.LoadScene("Game Over");
+        if(PlayerLives.Instance == null)
+        {
+            Debug.LogError("PlayerLives is not instantiated");
+            SceneLoader.Instance.LoadGameOverScene();
+            return;
+        }
+            
+        PlayerLives.Instance.LoseLife();
+        if(PlayerLives.Instance.HasPlayerLost())
+        {
+            SceneLoader.Instance.LoadGameOverScene();
+        }
+        else
+        {
+            SceneLoader.Instance.ReloadScene();
+        }
     }
 
 
