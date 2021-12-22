@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c486c716f42f1643adbc842a7f1b3f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 10
+  maxSpeed: 9
   gravityScale: 0.2
   paddle: {fileID: 2234278796659590619, guid: bdb99ffbaab5c784e88c331db4b227bd, type: 3}
 --- !u!82 &-3897842436487958457

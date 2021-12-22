@@ -54,7 +54,7 @@ public class Hexagon : SceneLoadedActor
 
     private void SpawnHitParticles()
     {
-        ParticleSystem newParticles = (ParticleSystem)UnityEditor.PrefabUtility.InstantiatePrefab(hitParticlesPrefab);
+        ParticleSystem newParticles = Instantiate(hitParticlesPrefab);
         newParticles.transform.position = transform.position; 
 
         ParticleSystem.MainModule settings = newParticles.main;

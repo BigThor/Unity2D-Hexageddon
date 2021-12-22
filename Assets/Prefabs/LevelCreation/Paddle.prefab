@@ -153,5 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8dfb64c431eafb4db85cead962d916b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 1.5
-  ball: {fileID: 7799538410341089262, guid: 66d03d6b977a6fa43b9a2c8afba3aa20, type: 3}
+  ball: {fileID: 0}
+  playerInput: {fileID: 0}
+  maxSpeed: 0.3
