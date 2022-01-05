@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7472651489581907873, guid: e6f4a835ff7ad574c80fb4073e9ced9a, type: 3}
       propertyPath: m_fontSize
-      value: 81.25
+      value: 82.7
       objectReference: {fileID: 0}
     - target: {fileID: 7472651490012924228, guid: e6f4a835ff7ad574c80fb4073e9ced9a, type: 3}
       propertyPath: m_Colors.m_NormalColor.a
@@ -110,6 +110,18 @@ PrefabInstance:
     - target: {fileID: 7472651490012924229, guid: e6f4a835ff7ad574c80fb4073e9ced9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472651490012924231, guid: e6f4a835ff7ad574c80fb4073e9ced9a, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472651490012924231, guid: e6f4a835ff7ad574c80fb4073e9ced9a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472651490012924231, guid: e6f4a835ff7ad574c80fb4073e9ced9a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.24705882
       objectReference: {fileID: 0}
     - target: {fileID: 7472651490012924282, guid: e6f4a835ff7ad574c80fb4073e9ced9a, type: 3}
       propertyPath: m_Name

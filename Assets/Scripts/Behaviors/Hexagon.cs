@@ -102,10 +102,6 @@ public class Hexagon : SceneLoadedActor
         {
             currentLevel.AddOneToHexagonCount();
         }
-        else
-        {
-            Debug.LogWarning("Level instance not found in scene");
-        }
     }
 
     private void OnDestroy()
