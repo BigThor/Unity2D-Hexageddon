@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -255,6 +255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6545804402114782581}
   - component: {fileID: 7159098165750576729}
+  - component: {fileID: -1242787156130971350}
   m_Layer: 0
   m_Name: PauseSystem
   m_TagString: Untagged
@@ -292,6 +293,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pausedCanvas: {fileID: 6545804402490827686}
   pauseButtonCanvas: {fileID: 271740316148791735}
+--- !u!114 &-1242787156130971350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6545804402114782580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab2cf1752731054ab9c58e5356c2bf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6545804402490827674
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +494,6 @@ GameObject:
   - component: {fileID: 2639591524411091645}
   - component: {fileID: 1931949949769838173}
   - component: {fileID: 667268707496569997}
-  - component: {fileID: 5068028587541091940}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -602,18 +614,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5068028587541091940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7886877679038416542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92941cb4ce6134c43ad9b225c45e9d81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6545804401487296238
 PrefabInstance:
   m_ObjectHideFlags: 0
