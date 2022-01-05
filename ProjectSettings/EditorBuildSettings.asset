@@ -12,11 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 1 - Smiley face.unity
     guid: 5aab9192c23caee4bb131a53267f1dfb
   - enabled: 1
-    path: Assets/Scenes/Level 2 - Pear Tree.unity
+    path: Assets/Scenes/Level 2 - Pear tree.unity
     guid: b806cfff26b869f488272f209875ff7e
   - enabled: 1
     path: Assets/Scenes/Level 3 - Burger.unity
     guid: cd16d402f39ec174f955f484c16fa168
+  - enabled: 1
+    path: Assets/Scenes/Level 4 - Ice cream.unity
+    guid: a1e21b88315f0124a95fb6b4f7bd7244
   - enabled: 1
     path: Assets/Scenes/Game Over.unity
     guid: 30106868e4f8c69468a399eadb7d7cc2
