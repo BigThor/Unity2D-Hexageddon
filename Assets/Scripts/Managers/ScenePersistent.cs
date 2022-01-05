@@ -28,6 +28,7 @@ public class ScenePersistent : MonoBehaviour
         if(!SceneLoader.Instance.IsCurrentSceneALevel())
         {
             Destroy(gameObject);
+            _instance = null;
         }
     }
 

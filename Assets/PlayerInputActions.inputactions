@@ -14,14 +14,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "StopMove",
-                    "type": "Button",
-                    "id": "ceebda06-a4c3-4b8a-b3e0-a57e497d86df",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Fire",
                     "type": "Button",
                     "id": "b13d96c9-7346-44b5-84dd-45c4231d1b35",
@@ -173,17 +165,6 @@
                 },
                 {
                     "name": "",
-                    "id": "1d849184-591f-4018-bc2a-55ea3166d982",
-                    "path": "<Touchscreen>/primaryTouch/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Touch",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "143bb1cd-cc10-4eca-a2f0-a3664166fe91",
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
@@ -228,17 +209,6 @@
                 },
                 {
                     "name": "",
-                    "id": "886e731e-7071-4ae4-95c0-e61739dad6fd",
-                    "path": "<Touchscreen>/primaryTouch/tap",
-                    "interactions": "MultiTap",
-                    "processors": "",
-                    "groups": ";Touch",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "ee3d0cd2-254e-47a7-a8cb-bc94d9658c54",
                     "path": "<Joystick>/trigger",
                     "interactions": "",
@@ -256,17 +226,6 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "05bcdfeb-6b3c-4807-bbec-2ee95cea6a7a",
-                    "path": "<Touchscreen>/press",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Touch",
-                    "action": "StopMove",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

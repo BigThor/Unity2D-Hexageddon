@@ -4,12 +4,10 @@ using UnityEngine.InputSystem;
 public class Paddle : MonoBehaviour
 {
     [SerializeField] Ball ball;
-    [SerializeField] PlayerInput playerInput;
     [SerializeField] float maxSpeed = 1f;
 
     private float horizontalDirection;
 
-    private float halfScreenWidthInPixels;
     private float playSpaceInUnits;
     private float aspect43 = 4f / 3f;
     private float limit = 0.8f;
@@ -19,7 +17,6 @@ public class Paddle : MonoBehaviour
     {
         horizontalDirection = 0f;
         playSpaceInUnits = Camera.main.orthographicSize * aspect43 * 2;
-        halfScreenWidthInPixels = Screen.width / 2f;
     }
 
     private void FixedUpdate()
@@ -40,19 +37,18 @@ public class Paddle : MonoBehaviour
 
     public void UpdateMoveDirection(InputAction.CallbackContext value)
     {
-        // Process coordinates of touch to determinate direction
-        if (playerInput != null && playerInput.currentControlScheme.Equals("Touch"))
-        {
-            // Get coordinate x of touch position
-            float horizontalMove = value.ReadValue<Vector2>().x;
-            horizontalMove -= halfScreenWidthInPixels;
-
-            // Clamp values to 1 or -1
-            horizontalDirection = Mathf.Clamp(horizontalMove, -1f, 1f);
-            return;
-        }
-
         horizontalDirection = value.ReadValue<Vector2>().x;
+    }
+
+
+    public void MoveLeft()
+    {
+        horizontalDirection = -1f;
+    }
+
+    public void MoveRight()
+    {
+        horizontalDirection = 1f;
     }
 
     public void StopMove(InputAction.CallbackContext value)
@@ -63,9 +59,22 @@ public class Paddle : MonoBehaviour
         }
     }
 
+    public void StopMove()
+    {
+        horizontalDirection = 0f;
+    }
+
     public void ShotBall(InputAction.CallbackContext value)
     {
         if (value.performed && !ball.isActive)
+        {
+            ball.Activate();
+        }
+    }
+
+    public void ShotBall()
+    {
+        if (!ball.isActive)
         {
             ball.Activate();
         }

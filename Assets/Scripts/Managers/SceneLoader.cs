@@ -69,6 +69,13 @@ public class SceneLoader : MonoBehaviour {
         return !( currentScene.Equals(mainMenuKey) || 
                   currentScene.Equals(gameOverKey) );
     }
+    private void OnDisable()
+    {
+        if (_instance != null)
+        {
+            Destroy(_instance.gameObject);
+        }
+    }
 
     private void OnDestroy()
     {
